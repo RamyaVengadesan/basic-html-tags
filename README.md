@@ -1,36 +1,17 @@
-# 🌐 Basic HTML Tags Demonstration
+# HTML Tag Lab
 
-## 📖 Overview
-This mini-project demonstrates **basic HTML tags** and their usage with examples.  
-It helps beginners understand the structure, syntax, and usage of core HTML elements.
+A searchable reference of 38 basic HTML tags with live previews, a code playground and a quiz.
+Built from the original *Basic HTML Tags* mini-project by Ramya Vengadesan.
 
+## Run it
+Open `index.html` in a browser. No build step, no dependencies.
 
-## 🧩 Topics Covered
-- HTML structure and tags
-- Headings and paragraphs
-- Lists and links
-- Forms and input elements
-- Tables
-- Images and multimedia
-- Meta tags and linking CSS
-- Basic CSS styling
+## Structure
+- `index.html`   page markup
+- `css/styles.css`  design tokens (light and dark), layout, components
+- `js/tags.js`   all tag data (add a tag here and it appears everywhere)
+- `js/app.js`    search and filters, detail dialog, syntax highlighter, playground, quiz
+- `build_bundle.py`  optional: inlines everything into one HTML file
 
----
-
-## 💡 How to View
-1. Open any `.html` file in a web browser (like Chrome or Edge).
-2. Explore each page to understand how HTML tags work.
-3. Check `styles.css` to see how basic styling is applied.
-
----
-
-## 🎯 Learning Outcomes
-- Understand the syntax and hierarchy of HTML.
-- Learn to format text, create tables, and add multimedia.
-- Use links and forms effectively in web pages.
-
----
-
-## 👩‍💻 Author
-**Ramya Vengadesan**  
-*Basic HTML Project*
+## Add a tag
+Add an object to `TAGS` in `js/tags.js` with `id, t, name, cat, st, desc, q, code`.

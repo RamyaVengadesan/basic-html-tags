@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="description" content="A searchable reference of basic HTML tags with live previews, a code playground and a quiz.">
+  <title>HTML Tag Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="HTML Tag Lab, back to top"><span class="glyph">&lt;/&gt;</span><span class="word">HTML Tag Lab</span></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#reference">Reference</a>
+        <a href="#playground">Playground</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <h1 id="heroTitle">Learn HTML tags by running them.</h1>
+        <p class="lede">Look up any basic tag, read what it does, and see the result next to the code. Then change the code yourself in the playground.</p>
+        <div class="cta">
+          <a class="btn primary" href="#reference">Browse the tags</a>
+          <a class="btn" href="#playground">Open the playground</a>
+        </div>
+        <ul class="stats" id="stats" aria-label="Project summary"></ul>
+      </div>
+
+      <div class="demo" aria-label="Live example">
+        <div class="demo-head">
+          <div class="demo-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="demo-pick" id="demoPick" role="group" aria-label="Choose an example tag"></div>
+        </div>
+        <pre class="code" id="demoCode" aria-live="polite"></pre>
+        <div class="demo-out"><small>What the browser shows</small><div class="render" id="demoRender"></div></div>
+      </div>
+    </section>
+
+    <section class="block" id="reference" aria-labelledby="refTitle">
+      <div class="block-head">
+        <h2 id="refTitle">Tag reference</h2>
+        <p>Search by tag or by what you want to do. Select a card to see its code and a live preview.</p>
+      </div>
+      <div class="tools">
+        <div class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <label class="sr-only" for="q">Search tags</label>
+          <input id="q" type="search" placeholder="Try “list”, “bold” or “form”" autocomplete="off">
+          <kbd aria-hidden="true">/</kbd>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filter tags"></div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="block" id="playground" aria-labelledby="labTitle">
+      <div class="block-head">
+        <h2 id="labTitle">Playground</h2>
+        <p>Type HTML on the left. The preview on the right updates as you type, and your work is saved in this browser.</p>
+      </div>
+      <div class="snips" id="snips"><span>Start from</span></div>
+      <div class="lab">
+        <div class="col">
+          <div class="col-head"><b>HTML</b>
+            <div class="acts">
+              <button class="btn small" id="labCopy" type="button">Copy code</button>
+              <button class="btn small" id="labReset" type="button">Reset</button>
+            </div>
+          </div>
+          <label class="sr-only" for="editor">HTML code editor</label>
+          <textarea id="editor" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+          <div class="status" id="labStatus"></div>
+        </div>
+        <div class="col">
+          <div class="col-head"><b>Browser view</b></div>
+          <iframe class="preview" id="labFrame" title="Playground preview" sandbox=""></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="quiz" aria-labelledby="quizTitle">
+      <div class="block-head">
+        <h2 id="quizTitle">Name that tag</h2>
+        <p>Ten questions, picked at random from the reference. Each one describes a tag, and you choose which it is.</p>
+      </div>
+      <div class="quiz" id="quizBox"></div>
+    </section>
+
+    <footer>
+      <span><b>HTML Tag Lab</b>, built on the Basic HTML Tags mini-project.</span>
+      <span>Author: Ramya Vengadesan</span>
+    </footer>
+  </main>
+
+  <dialog id="dlg" aria-labelledby="dlgTitle"></dialog>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/tags.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
